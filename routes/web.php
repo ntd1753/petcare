@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,29 +17,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("/pet_update", function (){
-    return view('content.user.updatePetInformation.pet_update');
-});
-
 Auth::routes();
-//Route::get("/index",[\App\Http\Controllers\Admin\UserController::class,'index']);
-Route::group(['middleware' => ['customer']], function () {
-    Route::get("customer/index",[\App\Http\Controllers\PetController::class, 'petListOfUser']);
-    Route::get("/petInfo/{id}", [\App\Http\Controllers\PetController::class,'petInfo'])->name('user.petInfo');
-});
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::group(['middleware' => ['doctor']], function () {
     // Định nghĩa các routes dành riêng cho bác sĩ
-
-    Route::get("/doctor/index",[\App\Http\Controllers\Admin\DoctorController::class,'index']);
+    return view("home");
 
 });
 
 Route::group(['middleware' => ['manager']], function () {
     // Định nghĩa các routes dành riêng cho quản lý
     return view("profile");
+
 });
 
 Route::group(['middleware' => ['admin']], function () {
     return view("test1");
 });
+Route::resource('patients', 'PatientController');

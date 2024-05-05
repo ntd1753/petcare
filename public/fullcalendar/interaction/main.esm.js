@@ -450,7 +450,7 @@ var ElementMirror = /** @class */ (function () {
 }());
 
 /*
-Is a cache for a given element's scroll pet (all the info that ScrollController stores)
+Is a cache for a given element's scroll information (all the info that ScrollController stores)
 in addition the "client rectangle" of the element.. the area within the scrollbars.
 
 The cache can be in one of two modes:

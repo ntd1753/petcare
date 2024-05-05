@@ -3552,7 +3552,7 @@ Docs & License: https://fullcalendar.io/
     }
 
     /*
-    Records offset pet for a set of elements, relative to an origin element.
+    Records offset information for a set of elements, relative to an origin element.
     Can record the left/right OR the top/bottom OR both.
     Provides methods for querying the cache by position.
     */
@@ -3640,7 +3640,7 @@ Docs & License: https://fullcalendar.io/
     }());
 
     /*
-    An object for getting/setting scroll-related pet for an element.
+    An object for getting/setting scroll-related information for an element.
     Internally, this is done very differently for window versus DOM element,
     so this object serves as a common interface.
     */
@@ -3946,11 +3946,11 @@ Docs & License: https://fullcalendar.io/
         renderEventDragSegs(state: EventSegUiInteractionState) {
           if (state) {
             let { isEvent, segs, sourceSeg } = state
-
+      
             if (this.eventRenderer) {
               this.eventRenderer.hideByHash(state.affectedInstances)
             }
-
+      
             // if the user is dragging something that is considered an event with real event data,
             // and this component likes to do drag mirrors OR the component where the seg came from
             // likes to do drag mirrors, then render a drag mirror.
@@ -3959,7 +3959,7 @@ Docs & License: https://fullcalendar.io/
                 this.mirrorRenderer.renderSegs(segs, { isDragging: true, sourceSeg })
               }
             }
-
+      
             // if it would be impossible to render a drag mirror OR this component likes to render
             // highlights, then render a highlight.
             if (!isEvent || this.doesDragHighlight) {
@@ -4406,7 +4406,7 @@ Docs & License: https://fullcalendar.io/
         var endMarker = framingRange.end;
         var instanceStarts = [];
         while (dayMarker < endMarker) {
-            var instanceStart
+            var instanceStart 
             // if everyday, or this particular day-of-week
             = void 0;
             // if everyday, or this particular day-of-week

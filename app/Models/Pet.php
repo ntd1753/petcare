@@ -8,20 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class Pet extends Model
 {
     use HasFactory;
-
-    public static function DB(string $string)
-    {
-    }
-
-    public function owners(){
-        return $this->hasOne(User::class,'id','ownerId');
-    }
-    public function species(){
-        return $this->hasOne(Species::class,'id','speciesId');
-    }
-    public function patients(){
-
-        return $this->hasMany(Patient::class,'id','patientId');
-    }
-
 }

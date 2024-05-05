@@ -1472,7 +1472,7 @@ if (jQuery('#chart-20').length) {
  * ---------------------------------------
  * This demo was created using amCharts 4.
  *
- * For more pet visit:
+ * For more information visit:
  * https://www.amcharts.com/
  *
  * Documentation is available at:
@@ -3970,7 +3970,7 @@ if (jQuery('#apex-pie-chart').length) {
     chart.render();
 }
 
-// Am Charts
+// Am Charts 
 
 if (jQuery('#am-simple-chart').length) {
     am4core.ready(function() {
@@ -7243,7 +7243,7 @@ if (jQuery("#home-chart-03").length) {
     // Themes end
 
     var chart = am4core.create("home-chart-03", am4charts.PieChart);
-    chart.hiddenState.properties.opacity = 0;
+    chart.hiddenState.properties.opacity = 0; 
 
     chart.data = [
       {
@@ -7266,7 +7266,7 @@ if (jQuery("#home-chart-03").length) {
     chart.radius = am4core.percent(70);
     chart.innerRadius = am4core.percent(40);
     chart.startAngle = 180;
-    chart.endAngle = 360;
+    chart.endAngle = 360;  
 
     var series = chart.series.push(new am4charts.PieSeries());
     series.dataFields.value = "value";
@@ -7285,7 +7285,7 @@ if (jQuery("#home-chart-03").length) {
 
     chart.legend = new am4charts.Legend();
 
-    });
+    }); 
 }
  jQuery("#home-chart-05").length && am4core.ready(function() {
     var options = {
@@ -7469,7 +7469,7 @@ if (jQuery("#home-chart-03").length) {
         plotOptions: {
           bar: {
             columnWidth: '50%',
-            endingShape: 'rounded'
+            endingShape: 'rounded'  
           }
         },
         dataLabels: {
@@ -7478,7 +7478,7 @@ if (jQuery("#home-chart-03").length) {
         stroke: {
           width: 2
         },
-
+        
         grid: {
           row: {
             colors: ['#fff', '#f2f2f2']
@@ -7749,7 +7749,7 @@ if (jQuery("#home-chart-03").length) {
 
         // this function will take current images on the map and create HTML elements for them
         function updateCustomMarkers( event ) {
-
+          
           // go through all of the images
           imageSeries.mapImages.each(function(image) {
             // check if it has corresponding HTML element
@@ -7770,7 +7770,7 @@ if (jQuery("#home-chart-03").length) {
 
         // this function creates and returns a new marker element
         function createCustomMarker( image ) {
-
+          
           var chart = image.dataItem.component.chart;
 
           // create holder
