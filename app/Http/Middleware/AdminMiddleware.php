@@ -12,6 +12,7 @@ class AdminMiddleware
      * Handle an incoming request.
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+<<<<<<< HEAD
      * @param \Illuminate\Http\Request $request
      * @param \Closure $next
      * @return mixed
@@ -22,6 +23,11 @@ class AdminMiddleware
             // Nếu người dùng không phải là doctor, có thể chuyển hướng hoặc trả về lỗi
             return redirect('/')->with('error', 'You do not have permission to access this page.');
         }
+=======
+     */
+    public function handle(Request $request, Closure $next): Response
+    {
+>>>>>>> 4ee7dae656d7a3307cc13b667017e8f10874242a
         return $next($request);
     }
 }
