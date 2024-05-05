@@ -11,10 +11,15 @@ class DoctorMiddleware
     /**
      * Handle an incoming request.
      *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @return mixed
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle($request, Closure $next)
     {
-        return $next($request);
-    }
+        if (!Auth::check() || !Auth::user()->hasRole('doctor')) {
+            // Nếu người dùng không phải là doctor, có thể chuyển hướng hoặc trả về lỗi
+            return redirect('/')->with('error', 'You do not have permission to access this page.');
+        }
+
 }
