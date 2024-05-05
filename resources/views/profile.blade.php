@@ -15,6 +15,18 @@
                         @endif
                         okoookokokokoko;o
                     </div>
+                    <div>
+                        <a href="{{ route('logout') }}" class="flex justify-start items-center gap-4 py-2 hover:text-red-500"
+                           onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <p> Logout</p>
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+
+                    </div>
                 </div>
             </div>
         </div>

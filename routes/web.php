@@ -18,5 +18,21 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
+//Route::get("/index",[\App\Http\Controllers\Admin\UserController::class,'index']);
+Route::get("/index",[\App\Http\Controllers\Admin\DoctorController::class,'index']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::group(['middleware' => ['doctor']], function () {
+    // Định nghĩa các routes dành riêng cho bác sĩ
+    return view("home");
+
+});
+
+Route::group(['middleware' => ['manager']], function () {
+    // Định nghĩa các routes dành riêng cho quản lý
+    return view("profile");
+
+});
+
+Route::group(['middleware' => ['admin']], function () {
+    return view("test1");
+});
