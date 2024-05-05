@@ -11,7 +11,7 @@ class DoctorController extends Controller
     function index(){
         $doctors = User::role('doctor')->get();
         //dd($doctors);
-        return view('admin.content.doctor.addDoctor',['doctor'=>$doctors]);
+        return view('admin.content.doctor.index',['doctor'=>$doctors]);
     }
 
 }
