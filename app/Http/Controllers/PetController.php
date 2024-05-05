@@ -21,4 +21,9 @@ class PetController extends Controller
 //        dd($pet);
         return view('content.user.pet.pet_information',['inforPet'=>$pet]);
     }
+    public function search(Request $request) {
+        $searchTerm = $request->input('search');
+        $pets = Pet::where('name', 'LIKE', '%' . $searchTerm . '%')->with('user', 'species')->get();
+        return view('content.user.pet.pet_find', ['pets' => $pets]);
+    }
 }

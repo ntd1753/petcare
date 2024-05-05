@@ -22,8 +22,10 @@ Route::get("/pet_update", function (){
     return view('content.user.updatePetInformation.pet_update');
 });
 
+Route::get('/pets/search', [\App\Http\Controllers\PetController::class, 'search'])->name('pets.search');
+
 Auth::routes();
-//Route::get("/index",[\App\Http\Controllers\Admin\UserController::class,'index']);
+Route::get("/index",[\App\Http\Controllers\Admin\UserController::class,'index']);
 Route::group(['middleware' => ['customer']], function () {
     Route::get("customer/index",[\App\Http\Controllers\PetController::class, 'petListOfUser']);
     Route::get("/petInfo/{id}", [\App\Http\Controllers\PetController::class,'petInfo'])->name('user.petInfo');
