@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Patient extends Model
 {
     use HasFactory;
+    public function medicalRecord()
+    {
+       return $this->hasOne(MedicalRecord::class,'patientId','id');
+    }
+
+
 }

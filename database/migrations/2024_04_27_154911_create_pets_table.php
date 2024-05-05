@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('color');
             $table->string('gender');
             $table->string('avatar')->nullable();
+            $table->unsignedBigInteger('patientId')->nullable();
             $table->string('healthStatus')->nullable();
             $table->integer('speciesId')->unsigned();
             //$table->foreign('speciesId')->references('id')->on('species');
