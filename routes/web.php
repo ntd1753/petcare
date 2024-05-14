@@ -18,15 +18,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("/pet_update", function (){
-    return view('content.user.updatePetInformation.pet_update');
-});
-
+Route::get("/pet_update/{id}", [App\Http\Controllers\PetController::class, 'formpet']);
+Route::post('/pet_store/{id}',[App\Http\Controllers\PetController::class,'pet_update'])->name('pet_store');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => ['auth:web']], function () {
-    Route::get("/index",[\App\Http\Controllers\PetController::class, 'petListOfUser']);
+    Route::get("/index",[\App\Http\Controllers\PetController::class, 'petListOfUser'])->name('petList');
     Route::get("/petInfo/{id}", [\App\Http\Controllers\PetController::class,'petInfo'])->name('user.petInfo');
 });
