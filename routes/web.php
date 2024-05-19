@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,17 +22,25 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get(
-    'products',
+    'registerPet',
     [
-        ProductsController::class,
+        RegisterController::class,
         'index'
     ]
 );
-Route::post('products', [
-    ProductsController::class,
-    'addProduct'
+Route::post('registerPet', [
+    RegisterController::class,
+    'addPet'
 ]);
 
+Route::get('registerPetRoom', [
+    RegisterController::class,
+    'registerRoom'
+]);
+Route::post('registerPetRoom', [
+    RegisterController::class,
+    'addPetRoom'
+]);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::group(['middleware' => ['doctor']], function () {
     // Định nghĩa các routes dành riêng cho bác sĩ
@@ -49,3 +57,5 @@ Route::group(['middleware' => ['manager']], function () {
 Route::group(['middleware' => ['admin']], function () {
     return view("test1");
 });
+
+

@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Boarding extends Model
 {
-    use HasFactory;
+
+
+    public function room()
+    {
+        return $this->hasOne('App\Room', 'id', 'roomId');
+    }
 }

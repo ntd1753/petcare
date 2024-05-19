@@ -529,41 +529,35 @@
                         </div>
                         <div class="iq-card-body">
                            <div class="new-user-info">
-                              <form class="mt-4" method="POST" action="products">
+                              <form class="mt-4" method="POST" action="registerPetRoom">
                                  @csrf
                                  <div class="row">
                                     <div class="form-group col-md-6">
                                        <label for="name">Name:</label>
                                        <input type="text" class="form-control" name="name" placeholder="Name">
                                     </div>
-                                    <div class="form-group col-md-6">
-                                       <label for="age">Age:</label>
-                                       <input type="text" class="form-control" name="age" placeholder="Age">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                       <label for="color">Color:</label>
-                                       <input type="text" class="form-control" name="color" placeholder="Color">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                       <label for="gender">Gender:</label>
-                                       <input type="text" class="form-control" name="gender" placeholder="Gender">
-                                    </div>
+                                   
                                    
                                     <div class="form-group col-sm-12">
-                                       <label>Species</label>
-                                       <select class="form-control" id="Species">
-                                          <option>Select Species</option>
-                                          <option>Caneda</option>
-                                          <option>Noida</option>
-                                          <option >USA</option>
-                                          <option>India</option>
-                                          <option>Africa</option>
+                                       <label>Select Room</label>
+                                       <select class="form-control" id="Species" name="RoomNumber">
+                                          <option value="A1">A1</option>
+                                          <option value="A2">A2</option>
+                                          <option value="B1">B1</option>
+                                          <option value="B2" >B2</option>
+                                          <option value="C1">C1</option>
+                                          <option value="C2">C2</option>
                                        </select>
                                     </div>
-                                   
+                                    <label for="date">Time Start:</label>
+                                    <input type="date" id="date" name="startTime" required>
+                                    <label for="date">Time End:</label>
+                                    <input type="date" id="date" name="endTime" required>
+                           
+                                    
                                  </div>
               
-                                 <button type="submit" class="btn btn-primary">Add New User</button>
+                                 <button type="submit" class="btn btn-primary">Add</button>
                               </form>
                            </div>
                         </div>
