@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Pet;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Boarding;
+use App\Models\Room;
 
 class RegisterController extends Controller
 {
@@ -50,17 +51,9 @@ class RegisterController extends Controller
     {
         $boarding = new Boarding();
         $boarding->PetID = Auth::user()->id;
-        switch ($request->RoomNumber) {
-            case ("A1"):
-                $boarding->roomId = 1;
-                break;
-            case ("A2"):
-                $boarding->roomId = 2;
-                break;
-
-            case ("B1"):
-                $boarding->roomId = 3;
-                break;
+        $rooms = Room::where('RoomNumber', $request->RoomNumber)->first();
+        if ($rooms) {
+            $boarding->roomId = $rooms->id;
         }
         $boarding->startTime = $request->startTime;
         $boarding->endTime = $request->endTime;

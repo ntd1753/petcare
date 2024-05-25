@@ -9,4 +9,8 @@ class Pet extends Model
 {
     use HasFactory;
     public $timestamps = false;
+    public function boardings()
+    {
+        return $this->hasQne(Boarding::class, 'petId','id');
+    }
 }

@@ -11,6 +11,7 @@ class Boarding extends Model
 
     public function room()
     {
-        return $this->hasOne('App\Room', 'id', 'roomId');
+        return $this->belongsTo(Room::class);
     }
+
 }
