@@ -41,6 +41,16 @@ Route::post('registerPetRoom', [
     RegisterController::class,
     'addPetRoom'
 ]);
+
+Route::get('registerApoi', [
+    RegisterController::class,
+    'registerApoi'
+]);
+
+Route::post('registerApoi', [
+    RegisterController::class,
+    'addApoi'
+]);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::group(['middleware' => ['doctor']], function () {
     // Định nghĩa các routes dành riêng cho bác sĩ

@@ -7,6 +7,7 @@ use App\Models\Pet;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Boarding;
 use App\Models\Room;
+use App\Models\Appointment;
 
 class RegisterController extends Controller
 {
@@ -58,6 +59,23 @@ class RegisterController extends Controller
         $boarding->startTime = $request->startTime;
         $boarding->endTime = $request->endTime;
         $boarding->save();
+        return view('register.show');
+    }
+
+    public function registerApoi()
+    {
+        $user = Auth::user();
+        return view('register.createApoi', compact('user'));
+    }
+    public function addApoi(Request $request)
+    {
+        $apoi = new Appointment();
+        $apoi->petId = Auth::user()->id;
+        $apoi->doctorId = 1;
+        $apoi->date = $request->date;
+        $apoi->time = $request->time;
+        $apoi->status = "ok";
+        $apoi->save();
         return view('register.show');
     }
 }
