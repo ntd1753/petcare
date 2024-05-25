@@ -987,7 +987,7 @@ form.comment-text { position: relative; }
 .speciality-list .user-img > a { height: 40px; width: 40px; display: block; text-align: center; line-height: 38px; font-size: 18px; border-radius: 50%; }
 
 /*---------------------------------------------------------------------
-Profile Edit 
+Profile Edit
 -----------------------------------------------------------------------*/
 .profile-pic { max-width: 100%; display: block; border-radius: 50%; -webkit-border-radius: 50%; }
 .profile-img-edit { position: relative; display: inline-block; height: 150px; width: 150px; }
@@ -1041,3 +1041,6 @@ Add User Page
 -----------------------------------------------------------------------*/
 .add-img-user .p-image { position: static; text-align: left; display: block; height: auto; width: auto; background: transparent; margin-top: 20px; }
 .img-extension a, .img-extension span { color: #777D74; padding: 0 3px; font-size: 13px; }
+
+.fixed-height {
+    height: 5em; }

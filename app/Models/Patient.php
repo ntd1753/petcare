@@ -13,5 +13,16 @@ class Patient extends Model
        return $this->hasOne(MedicalRecord::class,'patientId','id');
     }
 
+    protected $fillable = [
+        'appointmentDate',
+        'symptoms',
+        'diagnosis',
+        'reminder',
+        'recheckDate',
+    ];
 
+    public function pet()
+    {
+        return $this->belongsTo(Pet::class, 'patientID', 'id' );
+    }
 }

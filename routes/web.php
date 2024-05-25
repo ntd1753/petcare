@@ -27,4 +27,14 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group(['middleware' => ['auth:web']], function () {
     Route::get("/index",[\App\Http\Controllers\PetController::class, 'petListOfUser'])->name('petList');
     Route::get("/petInfo/{id}", [\App\Http\Controllers\PetController::class,'petInfo'])->name('user.petInfo');
+
+    //Doctor
+    Route::get("/index_doctor",[\App\Http\Controllers\PetController::class, 'petListOfDoctor'])->name('petList02');
+    Route::get("/petInfo_doctor/{id}", [\App\Http\Controllers\PetController::class,'petInfo_doctor'])->name('doctor.petInfo');
+    Route::get("/patient_update/{patient_id}", [App\Http\Controllers\PetController::class, 'formpatient']);
+    Route::post('/patient_store/{patient_id}', [App\Http\Controllers\PetController::class, 'patient_update'])->name('patient_store');
+//    Route::delete('/patient_delete/{id}', [App\Http\Controllers\PetController::class, 'destroy'])->name('patient.destroy');
+    Route::get("/patient_form", [App\Http\Controllers\PetController::class, 'addform'])->name('patient_form');
+    Route::get('/patients_add', [App\Http\Controllers\PetController::class, 'store'])->name('patient_add');
+
 });

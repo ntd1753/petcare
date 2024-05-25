@@ -19,9 +19,18 @@ class Pet extends Model
     public function species(){
         return $this->hasOne(Species::class,'id','speciesId');
     }
-    public function patients(){
+    protected $fillable = [
+        'name',
+        'age',
+        'color',
+        'gender',
+        'avatar',
+        'HealthStatus',
+    ];
 
-        return $this->hasMany(Patient::class,'id','patientId');
+    public function patients()
+    {
+        return $this->hasMany(Patient::class, 'petId', 'id')->orderBy('appointmentDate', 'desc');
     }
 
 }
