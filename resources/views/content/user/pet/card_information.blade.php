@@ -26,7 +26,7 @@
                             </li>
                         </ul>
                         <div class="text-center mt-3">
-                          <a href="pet_update" id="linkToOtherPage" >
+                          <a href="/pet_update/{{$inforPet->id}}" id="linkToOtherPage" >
                               <button type="submit" class="btn btn-primary mr-2">Sửa</button>
                           </a>
                       </div>

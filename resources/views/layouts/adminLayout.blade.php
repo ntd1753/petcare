@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>XRay - Responsive Bootstrap 4 Admin Dashboard Template</title>
     <!-- Favicon -->
-    @include('partial.admin.head')
+    @include('partial.manager.head')
 
 
 </head>
@@ -21,20 +21,20 @@
 <!-- Wrapper Start -->
 <div class="wrapper">
     <!-- Sidebar  -->
-    @include('partial.admin.sidebar')
+    @include('partial.manager.sidebar')
     <!-- Page Content  -->
     <div id="content-page" class="content-page">
         <!-- TOP Nav Bar -->
-        @include('partial.admin.header')
+        @include('partial.manager.header')
         <!-- TOP Nav Bar END -->
         @yield('content')
         <!-- Footer -->
-        @include('partial.admin.footer')
+{{--        @include('partial.admin.footer')--}}
         <!-- Footer END -->
     </div>
 </div>
 <!-- Wrapper END -->
 
-@include('partial.admin.bodyJS')
+@include('partial.manager.bodyJS')
 </body>
 </html>

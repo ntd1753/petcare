@@ -21,7 +21,23 @@ class Pet extends Model
     }
     public function patients(){
 
-        return $this->hasMany(Patient::class,'id','patientId');
+        return $this->hasMany(Patient::class,'petId','id');
+    }
+    public function boardings()
+    {
+        return $this->hasMany(Boarding::class);
+    }
+    public function pet()
+    {
+        return $this->belongsTo(Pet::class, 'petId');
     }
 
+    public function room()
+    {
+        return $this->belongsTo(Room::class, 'roomId');
+    }
+    public function appointments()
+    {
+        return $this->hasMany(Appointment::class, 'petId');
+    }
 }

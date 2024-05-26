@@ -10,7 +10,14 @@ use Illuminate\Support\Facades\DB;
 class UserController extends Controller
 {
     function index(){
-        $users =  DB::table('users')->paginate(15);
+        $users =  User::role('customer')->paginate(15);
         return view("admin.content.user.index",["users" => $users]);
     }
+    function destroy($id){
+        $user = User::find($id);
+        if (!$user) return redirect()->back();
+        $user->delete();
+        return redirect()->route("admin.doctor.index");
+    }
+
 }

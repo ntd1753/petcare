@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Boarding extends Model
 {
     use HasFactory;
+    protected $fillable=['petId',"roomId", "startTime",'endTime'];
 }
