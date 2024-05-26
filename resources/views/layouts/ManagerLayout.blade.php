@@ -16,6 +16,10 @@
     <div id="content-page" class="content-page">
         <!-- TOP Nav Bar -->
         @include("partial.manager.header")
+        <div class="iq-search-bar">
+            @yield("header")
+        </div>
+{{--            @yield("search")--}}
         <!-- TOP Nav Bar END -->
         <div class="container-fluid">
            @yield("content")

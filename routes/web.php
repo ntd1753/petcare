@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -36,5 +37,5 @@ Route::group(['middleware' => ['auth:web']], function () {
 //    Route::delete('/patient_delete/{id}', [App\Http\Controllers\PetController::class, 'destroy'])->name('patient.destroy');
     Route::get("/patient_form", [App\Http\Controllers\PetController::class, 'addform'])->name('patient_form');
     Route::get('/patients_add', [App\Http\Controllers\PetController::class, 'store'])->name('patient_add');
-
+    Route::get('/search_pet', [App\Http\Controllers\SearchController::class, 'search'])->name('search_pet');
 });
