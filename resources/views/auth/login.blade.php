@@ -30,7 +30,10 @@
                     <input type="checkbox" class="custom-control-input" id="customCheck1" {{ old('remember') ? 'checked' : '' }}>
                     <label class="custom-control-label" for="customCheck1">{{ __('Remember Me') }}</label>
                 </div>
-                <button type="submit" class="btn btn-primary float-right"> {{ __('Login') }}</button>
+                
+                    <button type="submit" class="btn btn-primary float-right"> {{ __('Login') }}</button>
+               
+                
             </div>
             <div class="sign-info">
                 <span class="dark-color d-inline-block line-height-2">Don't have an account? <a href="/register">Sign up</a></span>

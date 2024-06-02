@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('rooms', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('RoomNumber');
-            $table->integer('Capacity');
             $table->enum('Status',['available','unavailable'])->default('available');
             $table->timestamps();
         });

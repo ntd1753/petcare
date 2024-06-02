@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Room extends Model
 {
     use HasFactory;
+    public function boardings(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Boarding::class);
+    }
 }

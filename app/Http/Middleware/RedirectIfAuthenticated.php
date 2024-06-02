@@ -18,6 +18,17 @@ class RedirectIfAuthenticated
     public function handle(Request $request, Closure $next, string ...$guards): Response
     {
         $guards = empty($guards) ? [null] : $guards;
+        if (Auth::check()) {
+            $user = Auth::user();
+
+            if ($user->hasRole('admin') || $user->hasRole('manager')) {
+                return redirect('/admin');
+            } elseif ($user->hasRole('doctor')) {
+                return redirect('/index_doctor');
+            } elseif ($user->hasRole('customer')) {
+                return redirect('/customer/index');
+            }
+        }
 
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {

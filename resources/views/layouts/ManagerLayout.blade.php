@@ -21,7 +21,7 @@
            @yield("content")
         </div>
         <!-- Footer -->
-       @include("partial.manager.footer")
+{{--       @include("partial.manager.footer")--}}
         <!-- Footer END -->
     </div>
 </div>

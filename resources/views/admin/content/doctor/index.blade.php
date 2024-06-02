@@ -5,11 +5,16 @@
             <div class="iq-card">
                 <div class="iq-card-header d-flex justify-content-between">
                     <div class="iq-header-title">
-                        <h4 class="card-title">Doctors List</h4>
+                        <h4 class="card-title">Danh sách bác sĩ</h4>
                     </div>
+
                 </div>
             </div>
+            <div class="iq-header-title">
+                <a href="{{route('admin.doctor.add')}}"><button type="button" class="btn btn-outline-success mb-3"><i class="ri-add-fill"></i>Thêm bác sĩ</button></a>
+            </div>
         </div>
+
        @foreach($doctor as $doctor)
             <div class="col-sm-6 col-md-3">
                 <div class="iq-card">
@@ -20,10 +25,11 @@
                         <div class="iq-doc-info mt-3">
                             <h4> Dr.{{$doctor->name}}</h4>
                             <p class="mb-0" >Cardiologists</p>
-                            <a href="javascript:void();">{{$doctor->email}}</a>
+                            <a href="#">{{$doctor->email}}</a>
                         </div>
-                        <a href="profile.html" class="btn btn-primary">View Profile</a>
-                        <a href="profile.html" class="btn btn-danger">Delete</a>
+{{--                        <a href="profile.html" class="btn btn-primary">View Profile</a>--}}
+                        <a href="{{route("admin.doctor.edit",$doctor->id)}}" class="btn btn-warning">Edit Profile</a>
+                        <a href="{{route("admin.doctor.destroy",$doctor->id)}}" class="btn btn-danger">Delete</a>
 
                     </div>
                 </div>

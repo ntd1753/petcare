@@ -1,7 +1,7 @@
 <div class="col-lg-4 row m-0 p-0">
-        <div class="col-sm-12">
-            <div class="iq-card iq-card-block iq-card-stretch iq-card-height iq-user-profile-block" style="height: 50%;">
-                <div class="iq-card-body">
+    <div class="col-sm-12" style="max-height: 350px">
+        <div class="iq-card iq-card-block iq-card-stretch iq-card-height iq-user-profile-block" style="">
+            <div class="iq-card-body">
 
                     <div class="user-details-block">
                         <div class="user-profile text-center">
@@ -26,7 +26,7 @@
                             </li>
                         </ul>
                         <div class="text-center mt-3">
-                          <a href="pet_update" id="linkToOtherPage" >
+                          <a href="/pet_update/{{$inforPet->id}}" id="linkToOtherPage" >
                               <button type="submit" class="btn btn-primary mr-2">Sửa</button>
                           </a>
                       </div>
