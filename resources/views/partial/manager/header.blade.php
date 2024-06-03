@@ -46,7 +46,7 @@
                         <img src="@if(is_null(Auth::user()->avatar)){{asset("images/user/1.jpg")}} @else {{asset(Auth::user()->avatar)}}  @endif" class="img-fluid rounded mr-3" alt="user">
                         <div class="caption">
                             <h6 class="mb-0 line-height">{{Auth::user()->name}}</h6>
-                            <span class="font-size-12">{{Auth::user()->getRoleNames()[0]}}</span>
+                            <span class="font-size-12">Đang hoạt động</span>
                         </div>
                     </a>
                     <div class="iq-sub-dropdown iq-user-dropdown">
@@ -54,7 +54,7 @@
                             <div class="iq-card-body p-0 ">
                                 <div class="bg-primary p-3">
                                     <h5 class="mb-0 text-white line-height">Xin chào {{ Auth::user()->name }}</h5>
-                                    <span class="text-white font-size-12">Trực tuyến</span>
+
                                 </div>
                                 <a href="{{ route('user.show') }}" class="iq-sub-card iq-bg-primary-hover">
                                     <div class="media align-items-center">

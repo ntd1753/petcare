@@ -16,7 +16,12 @@
                                     <div class="form-group row align-items-center">
                                         <div class="col-md-12">
                                             <div class="profile-img-edit">
-                                                <img class="profile-pic" src="images/user/11.png" alt="profile-pic">
+                                                <img class="profile-pic" src="
+                                                @if(is_null($proPet->avatar))
+                                                 https://png.pngtree.com/png-clipart/20200701/original/pngtree-cat-default-avatar-png-image_5416936.jpg
+                                                 @else
+                                                 {!! asset($proPet->avatar) !!}
+                                                @endif" alt="profile-pic">
                                                 <div class="p-image">
                                                     <i class="ri-pencil-line upload-button"></i>
                                                     <input class="file-upload" type="file" accept="image/*"/>

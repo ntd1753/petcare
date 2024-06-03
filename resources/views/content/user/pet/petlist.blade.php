@@ -19,7 +19,7 @@
                     <div class="iq-card-body text-center">
                         <div class="doc-profile">
                             <img class="rounded-circle img-fluid avatar-80" src="@if(is_null($item->avatar)) https://png.pngtree.com/png-clipart/20200701/original/pngtree-cat-default-avatar-png-image_5416936.jpg
-                            @else {{asset($item->avatar)}} @endif " alt="profile">
+                            @else {{$item->avatar}} @endif " alt="profile">
                         </div>
                         <div class="iq-doc-info mt-3">
                             <h4> {{$item->name}}</h4>

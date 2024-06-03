@@ -9,11 +9,13 @@
                 <div class="iq-header-title col-lg-9">
                     <h4 class="card-title text-primary">Bệnh Án</h4>
                 </div>
-                <div class="col-lg-3">
-                    <a href="{{route('formpatient',$inf->medicalRecord->id)}}" id="linkToOtherPage" >
-                        <button type="submit" class="btn btn-primary mr-2">Sửa</button>
-                    </a>
-                </div>
+                @if(Auth::user()->hasRole('doctor'))
+                    <div class="col-lg-3">
+                        <a href="{{route('formpatient',$inf->medicalRecord->id)}}" id="linkToOtherPage" >
+                            <button type="submit" class="btn btn-primary mr-2">Sửa</button>
+                        </a>
+                    </div>
+                @endif
 
             </div>
 
